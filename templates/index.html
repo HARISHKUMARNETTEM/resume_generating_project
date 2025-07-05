@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Resume Generator</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>Resume & Cover Letter Generator</h1>
+</header>
+
+<div class="main-container">
+  <form method="POST" class="form">
+    <div class="form-left">
+      <label>Name</label>
+      <input type="text" name="name" required>
+
+      <label>Contact No.</label>
+      <input type="text" name="contact" required>
+
+      <label>State</label>
+      <select name="state" required>
+        <option value="" disabled selected>Select</option>
+        {% for st in states %}
+        <option value="{{ st }}">{{ st }}</option>
+        {% endfor %}
+      </select>
+
+      <label>Address</label>
+      <textarea name="address" required></textarea>
+
+      <label>University</label>
+      <input type="text" name="university" required>
+
+      <label>Graduation Year</label>
+      <input type="number" name="grad_year" required>
+    </div>
+
+    <div class="form-right">
+      <label>Education</label>
+      <select name="education" required>
+        <option value="" disabled selected>Select</option>
+        {% for edu in education_opts %}
+        <option value="{{ edu }}">{{ edu }}</option>
+        {% endfor %}
+      </select>
+
+      <label>Experience</label>
+      <select name="experience" required>
+        <option value="" disabled selected>Select</option>
+        {% for exp in experience_opts %}
+        <option value="{{ exp }}">{{ exp }}</option>
+        {% endfor %}
+      </select>
+
+      <label>Job Role</label>
+      <input type="text" name="job_role" required>
+
+      <label>Certifications & Skills</label>
+      <input type="text" name="certifications" required>
+
+      <label>Achievements</label>
+      <textarea name="achievements" required></textarea>
+
+      <label>Company Name</label>
+      <input type="text" name="company" required>
+    </div>
+
+    <div class="center-btn">
+      <button type="submit" class="btn">Generate</button>
+    </div>
+  </form>
+
+  {% if show_output %}
+  <div class="output-box">
+    <h2>📄 Resume</h2>
+    <pre>{{ resume | safe }}</pre>
+
+    {% if cover_letter %}
+    <h2>✉️ Cover Letter</h2>
+    <pre>{{ cover_letter | safe }}</pre>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+
+</body>
+</html>

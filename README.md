@@ -24,40 +24,45 @@ AI Integration: Google Gemini 1.5 Flash API
 Environment Management: python-dotenv
 
 📂 Project Structure
-bash
-Copy code
+text
+Copy
+Edit
 resume_writer_project/
-├── app.py                 # Flask backend
-├── requirements.txt       # Project dependencies
-├── .gitignore             # Files to be ignored by Git
-├── .env                   # Stores API key (keep secret)
+├── app.py              # Flask backend
+├── requirements.txt    # Project dependencies
+├── .gitignore          # Files to be ignored by Git
+├── .env                # Stores API key (keep secret)
 │
 ├── templates/
-│   └── index.html         # Form-based user interface
+│   └── index.html      # Form-based user interface
 │
 └── static/
-    └── style.css          # Frontend styling
+    └── style.css       # Frontend styling
 🔧 Setup Instructions
 1. Clone the repository
 bash
-Copy code
+Copy
+Edit
 git clone https://github.com/your-username/resume-writer-project.git
 cd resume-writer-project
 2. Install dependencies
 bash
-Copy code
+Copy
+Edit
 pip install -r requirements.txt
 3. Configure the Gemini API key
 Create a .env file in the root directory and add:
 
 env
-Copy code
+Copy
+Edit
 GEMINI_API_KEY=your_api_key_here
 ⚠️ Note: The .env file is excluded from version control via .gitignore.
 
 4. Start the application
 bash
-Copy code
+Copy
+Edit
 python app.py
 Then, open your browser and go to http://127.0.0.1:5000/
 
